@@ -4,7 +4,7 @@ $(function(){
     var backFlg = window.performance.navigation.type;
 
     // ブラウザバック以外で読み込まれたらのif
-    if(backFlg < 2){
+    if(backFlg < 1){
         // 履歴に現在のURLを追加保存する
         history.pushState(null,null,location.href);
     }
