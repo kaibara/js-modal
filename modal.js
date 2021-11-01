@@ -1,7 +1,13 @@
 $(function(){
 
-    // 履歴に現在のURLを追加保存する
-    history.pushState(null,null,location.href);
+    // どのようにページが読み込まれたかのフラグ
+    var backFlg = window.performance.navigation.type;
+
+    // ブラウザバック以外で読み込まれたらのif
+    if(backFlg < 2){
+        // 履歴に現在のURLを追加保存する
+        history.pushState(null,null,location.href);
+    }
 
     //モーダルウィンドウの表示
     $(window).on('popstate', function(event) {
